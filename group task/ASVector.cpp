@@ -3,6 +3,12 @@
 
 using namespace std;
 
+/**
+ * @brief Construct a new ASVector<T>::ASVector object
+ * 
+ * @tparam T 
+ * @param cap 
+ */
 template <class T>
 ASVector<T>::ASVector(int cap)
 {
@@ -11,6 +17,13 @@ ASVector<T>::ASVector(int cap)
     data = new T[capacity];
 }
 
+/**
+ * @brief Construct a new ASVector<T>::ASVector object
+ * 
+ * @tparam T 
+ * @param arr 
+ * @param n 
+ */
 template <class T>
 ASVector<T>::ASVector(T *arr, int n)
 {
@@ -23,6 +36,12 @@ ASVector<T>::ASVector(T *arr, int n)
     }
 }
 
+/**
+ * @brief Construct a new ASVector<T>::ASVector object
+ * 
+ * @tparam T 
+ * @param other 
+ */
 template <class T>
 ASVector<T>::ASVector(const ASVector &other)
 {
@@ -35,12 +54,24 @@ ASVector<T>::ASVector(const ASVector &other)
     }
 }
 
+/**
+ * @brief Destroy the ASVector<T>::ASVector object
+ * 
+ * @tparam T 
+ */
 template <class T>
 ASVector<T>::~ASVector()
 {
     delete[] data;
 }
 
+/**
+ * @brief Overload the = operator (copy)
+ * 
+ * @tparam T 
+ * @param other 
+ * @return ASVector<T>& 
+ */
 template <class T>
 ASVector<T> &ASVector<T>::operator=(const T &other)
 {
@@ -63,6 +94,13 @@ ASVector<T> &ASVector<T>::operator=(const T &other)
     }
 }
 
+/**
+ * @brief Overload the = operator (move)
+ * 
+ * @tparam T 
+ * @param other 
+ * @return ASVector<T>& 
+ */
 template <class T>
 ASVector<T> &ASVector<T>::operator=(const T &&other)
 {
@@ -85,6 +123,13 @@ ASVector<T> &ASVector<T>::operator=(const T &&other)
     }
 }
 
+/**
+ * @brief overloading the [] operator
+ * 
+ * @tparam T 
+ * @param index 
+ * @return T& 
+ */
 template <class T>
 T &ASVector<T>::operator[](int index)
 {
@@ -98,6 +143,13 @@ T &ASVector<T>::operator[](int index)
     }
 }
 
+/**
+ * @brief add an element to the end of the vector
+ * 
+ * @tparam T 
+ * @param item 
+ * @return int 
+ */
 template <class T>
 int ASVector<T>::push_back(T item)
 {
@@ -109,6 +161,12 @@ int ASVector<T>::push_back(T item)
     return size;
 }
 
+/**
+ * @brief remove the last element of the vector
+ * 
+ * @tparam T 
+ * @return T 
+ */
 template <class T>
 T ASVector<T>::pop_back()
 {
@@ -132,6 +190,12 @@ T ASVector<T>::pop_back()
     }
 }
 
+/**
+ * @brief erase an element at a given index
+ * 
+ * @tparam T 
+ * @param it 
+ */
 template <class T>
 void ASVector<T>::erase(iterator it)
 {
@@ -150,6 +214,13 @@ void ASVector<T>::erase(iterator it)
     }
 }
 
+/**
+ * @brief erase a range of elements
+ * 
+ * @tparam T 
+ * @param start 
+ * @param end 
+ */
 template <class T>
 void ASVector<T>::erase(iterator start, iterator end)
 {
@@ -169,6 +240,11 @@ void ASVector<T>::erase(iterator start, iterator end)
     }
 }
 
+/**
+ * @brief remove all elements from the vector
+ * 
+ * @tparam T 
+ */
 template <class T>
 void ASVector<T>::clear()
 {
@@ -177,6 +253,13 @@ void ASVector<T>::clear()
     data = new T[capacity];
 }
 
+/**
+ * @brief add an element at a given index
+ * 
+ * @tparam T 
+ * @param it 
+ * @param item 
+ */
 template <class T>
 void ASVector<T>::insert(iterator it, T item)
 {
@@ -200,18 +283,38 @@ void ASVector<T>::insert(iterator it, T item)
     }
 }
 
+/**
+ * @brief pointer to the first element
+ * 
+ * @tparam T 
+ * @return T* 
+ */
 template <class T>
 T *ASVector<T>::begin()
 {
     return data;
 }
 
+/**
+ * @brief pointer to the last element
+ * 
+ * @tparam T 
+ * @return T* 
+ */
 template <class T>
 T *ASVector<T>::end()
 {
     return data + size - 1;
 }
 
+/**
+ * @brief compare two vectors
+ * 
+ * @tparam T 
+ * @param other 
+ * @return true 
+ * @return false 
+ */
 template <class T>
 bool ASVector<T>::operator==(const ASVector<T> &other)
 {
@@ -232,6 +335,14 @@ bool ASVector<T>::operator==(const ASVector<T> &other)
     }
 }
 
+/**
+ * @brief check if the first vector is less than the second vector
+ * 
+ * @tparam T 
+ * @param other 
+ * @return true 
+ * @return false 
+ */
 template <class T>
 bool ASVector<T>::operator<(const ASVector<T> &other)
 {
@@ -256,18 +367,36 @@ bool ASVector<T>::operator<(const ASVector<T> &other)
     }
 }
 
+/**
+ * @brief return the size of the vector
+ * 
+ * @tparam T 
+ * @return int 
+ */
 template <class T>
 int ASVector<T>::getSize() const
 {
     return size;
 }
 
+/**
+ * @brief return the capacity of the vector
+ * 
+ * @tparam T 
+ * @return int 
+ */
 template <class T>
 int ASVector<T>::getCapacity() const
 {
     return capacity;
 }
 
+/**
+ * @brief resize the vector
+ * 
+ * @tparam T 
+ * @return int 
+ */
 template <class T>
 int ASVector<T>::resize()
 {
@@ -284,6 +413,13 @@ int ASVector<T>::resize()
     return capacity;
 }
 
+/**
+ * @brief check if the vector is empty
+ * 
+ * @tparam T 
+ * @return true 
+ * @return false 
+ */
 template <class T>
 bool ASVector<T>::empty()
 {

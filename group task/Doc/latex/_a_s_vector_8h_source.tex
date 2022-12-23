@@ -1,0 +1,53 @@
+\hypertarget{_a_s_vector_8h_source}{}\doxysection{ASVector.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef ASVECTOR\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define ASVECTOR\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_s_vector}{ASVector}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{private}:}
+\DoxyCodeLine{11     \textcolor{keywordtype}{int} size, capacity;}
+\DoxyCodeLine{12     T *data;}
+\DoxyCodeLine{13     \textcolor{keyword}{typedef} T *iterator;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_a_s_vector}{ASVector}}(\textcolor{keywordtype}{int} cap = 2);}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_a_s_vector}{ASVector}}(T *arr, \textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_a_s_vector}{ASVector}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_a_s_vector}{ASVector}} \&other);}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_a_s_vector}{\string~ASVector}}();}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_a_s_vector}{ASVector}} \&operator=(\textcolor{keyword}{const} T \&other);}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_a_s_vector}{ASVector}} \&operator=(\textcolor{keyword}{const} T \&\&other);}
+\DoxyCodeLine{22     T \&operator[](\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} push\_back(T item);}
+\DoxyCodeLine{24     T pop\_back();}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} erase(iterator it);}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} erase(iterator start, iterator end);}
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} clear();}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} insert(iterator it, T value);}
+\DoxyCodeLine{29     iterator begin();}
+\DoxyCodeLine{30     iterator end();}
+\DoxyCodeLine{31     \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{class_a_s_vector}{ASVector<T>}} \&other);}
+\DoxyCodeLine{32     \textcolor{keywordtype}{bool} operator<(\textcolor{keyword}{const} \mbox{\hyperlink{class_a_s_vector}{ASVector<T>}} \&other);}
+\DoxyCodeLine{33     \textcolor{keywordtype}{int} getSize() \textcolor{keyword}{const};}
+\DoxyCodeLine{34     \textcolor{keywordtype}{int} getCapacity() \textcolor{keyword}{const};}
+\DoxyCodeLine{35     \textcolor{keywordtype}{int} resize();}
+\DoxyCodeLine{36     \textcolor{keywordtype}{bool} empty();}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} print();}
+\DoxyCodeLine{38     \textcolor{comment}{// friend ostream \&operator<<(ostream \&out, ASVector<T> other)}}
+\DoxyCodeLine{39     \textcolor{comment}{// \{}}
+\DoxyCodeLine{40     \textcolor{comment}{//     for (int i = 0; i < other.size; i++)}}
+\DoxyCodeLine{41     \textcolor{comment}{//     \{}}
+\DoxyCodeLine{42     \textcolor{comment}{//         out << other.data[i] << endl;}}
+\DoxyCodeLine{43     \textcolor{comment}{//     \}}}
+\DoxyCodeLine{44     \textcolor{comment}{//     return out;}}
+\DoxyCodeLine{45     \textcolor{comment}{// \}}}
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

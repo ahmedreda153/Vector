@@ -1,3 +1,13 @@
+/**
+ * @file ASVector.h
+ * @author Ahmed Reda / Shrouk Tarek
+ * @brief 
+ * @version 0.1
+ * @date 2022-12-23
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef ASVECTOR_H
 #define ASVECTOR_H
 
