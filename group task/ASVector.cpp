@@ -45,6 +45,7 @@ ASVector<T>::ASVector(T *arr, int n)
 template <class T>
 ASVector<T>::ASVector(const ASVector &other)
 {
+    
     size = other.size;
     capacity = other.capacity;
     data = new T[capacity];
