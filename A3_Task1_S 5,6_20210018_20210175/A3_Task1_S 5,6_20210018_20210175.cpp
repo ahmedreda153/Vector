@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
-#include "ASVector.h"
+#include "A3_Task1_S 5,6_20210018_20210175.h"
 
 using namespace std;
 
 /**
  * @brief Construct a new ASVector<T>::ASVector object
- * 
- * @tparam T 
- * @param cap 
+ *
+ * @tparam T
+ * @param cap
  */
 template <class T>
 ASVector<T>::ASVector(int cap)
@@ -19,10 +19,10 @@ ASVector<T>::ASVector(int cap)
 
 /**
  * @brief Construct a new ASVector<T>::ASVector object
- * 
- * @tparam T 
- * @param arr 
- * @param n 
+ *
+ * @tparam T
+ * @param arr
+ * @param n
  */
 template <class T>
 ASVector<T>::ASVector(T *arr, int n)
@@ -38,9 +38,9 @@ ASVector<T>::ASVector(T *arr, int n)
 
 /**
  * @brief Construct a new ASVector<T>::ASVector object
- * 
- * @tparam T 
- * @param other 
+ *
+ * @tparam T
+ * @param other
  */
 template <class T>
 ASVector<T>::ASVector(const ASVector &other)
@@ -56,8 +56,8 @@ ASVector<T>::ASVector(const ASVector &other)
 
 /**
  * @brief Destroy the ASVector<T>::ASVector object
- * 
- * @tparam T 
+ *
+ * @tparam T
  */
 template <class T>
 ASVector<T>::~ASVector()
@@ -67,13 +67,13 @@ ASVector<T>::~ASVector()
 
 /**
  * @brief Overload the = operator (copy)
- * 
- * @tparam T 
- * @param other 
- * @return ASVector<T>& 
+ *
+ * @tparam T
+ * @param other
+ * @return ASVector<T>&
  */
 template <class T>
-ASVector<T> &ASVector<T>::operator=(const T &other)
+ASVector<T> &ASVector<T>::operator=(const ASVector &other)
 {
     if (this != &other)
     {
@@ -96,13 +96,13 @@ ASVector<T> &ASVector<T>::operator=(const T &other)
 
 /**
  * @brief Overload the = operator (move)
- * 
- * @tparam T 
- * @param other 
- * @return ASVector<T>& 
+ *
+ * @tparam T
+ * @param other
+ * @return ASVector<T>&
  */
 template <class T>
-ASVector<T> &ASVector<T>::operator=(const T &&other)
+ASVector<T> &ASVector<T>::operator=(const ASVector &&other)
 {
     if (this != &other)
     {
@@ -125,17 +125,17 @@ ASVector<T> &ASVector<T>::operator=(const T &&other)
 
 /**
  * @brief overloading the [] operator
- * 
- * @tparam T 
- * @param index 
- * @return T& 
+ *
+ * @tparam T
+ * @param index
+ * @return T&
  */
 template <class T>
 T &ASVector<T>::operator[](int index)
 {
     if (index < 0 || index >= size)
     {
-        throw "Index out of range";
+        throw "Index out of range in [] operator";
     }
     else
     {
@@ -145,10 +145,10 @@ T &ASVector<T>::operator[](int index)
 
 /**
  * @brief add an element to the end of the vector
- * 
- * @tparam T 
- * @param item 
- * @return int 
+ *
+ * @tparam T
+ * @param item
+ * @return int
  */
 template <class T>
 int ASVector<T>::push_back(T item)
@@ -163,9 +163,9 @@ int ASVector<T>::push_back(T item)
 
 /**
  * @brief remove the last element of the vector
- * 
- * @tparam T 
- * @return T 
+ *
+ * @tparam T
+ * @return T
  */
 template <class T>
 T ASVector<T>::pop_back()
@@ -192,9 +192,9 @@ T ASVector<T>::pop_back()
 
 /**
  * @brief erase an element at a given index
- * 
- * @tparam T 
- * @param it 
+ *
+ * @tparam T
+ * @param it
  */
 template <class T>
 void ASVector<T>::erase(iterator it)
@@ -202,7 +202,7 @@ void ASVector<T>::erase(iterator it)
     int index = it - data;
     if (index < 0 || index >= size)
     {
-        throw "Index out of range";
+        throw "Index out of range in erase function1";
     }
     else
     {
@@ -216,10 +216,10 @@ void ASVector<T>::erase(iterator it)
 
 /**
  * @brief erase a range of elements
- * 
- * @tparam T 
- * @param start 
- * @param end 
+ *
+ * @tparam T
+ * @param start
+ * @param end
  */
 template <class T>
 void ASVector<T>::erase(iterator start, iterator end)
@@ -228,7 +228,7 @@ void ASVector<T>::erase(iterator start, iterator end)
     int end_index = end - data;
     if (start_index < 0 || start_index >= size || end_index < 0 || end_index >= size || start_index > end_index)
     {
-        throw "Index out of range";
+        throw "Index out of range in erase function2";
     }
     else
     {
@@ -242,8 +242,8 @@ void ASVector<T>::erase(iterator start, iterator end)
 
 /**
  * @brief remove all elements from the vector
- * 
- * @tparam T 
+ *
+ * @tparam T
  */
 template <class T>
 void ASVector<T>::clear()
@@ -255,18 +255,21 @@ void ASVector<T>::clear()
 
 /**
  * @brief add an element at a given index
- * 
- * @tparam T 
- * @param it 
- * @param item 
+ *
+ * @tparam T
+ * @param it
+ * @param item
  */
 template <class T>
 void ASVector<T>::insert(iterator it, T item)
 {
     int index = it - data;
+    // cout << "it = " << it << endl;
+    // cout << "data = " << data << endl;
+    // cout << "index = " << index << endl;
     if (index < 0 || index >= size)
     {
-        throw "Index out of range";
+        throw "index out of range in insert function";
     }
     else
     {
@@ -285,9 +288,9 @@ void ASVector<T>::insert(iterator it, T item)
 
 /**
  * @brief pointer to the first element
- * 
- * @tparam T 
- * @return T* 
+ *
+ * @tparam T
+ * @return T*
  */
 template <class T>
 T *ASVector<T>::begin()
@@ -297,9 +300,9 @@ T *ASVector<T>::begin()
 
 /**
  * @brief pointer to the last element
- * 
- * @tparam T 
- * @return T* 
+ *
+ * @tparam T
+ * @return T*
  */
 template <class T>
 T *ASVector<T>::end()
@@ -309,11 +312,11 @@ T *ASVector<T>::end()
 
 /**
  * @brief compare two vectors
- * 
- * @tparam T 
- * @param other 
- * @return true 
- * @return false 
+ *
+ * @tparam T
+ * @param other
+ * @return true
+ * @return false
  */
 template <class T>
 bool ASVector<T>::operator==(const ASVector<T> &other)
@@ -337,11 +340,11 @@ bool ASVector<T>::operator==(const ASVector<T> &other)
 
 /**
  * @brief check if the first vector is less than the second vector
- * 
- * @tparam T 
- * @param other 
- * @return true 
- * @return false 
+ *
+ * @tparam T
+ * @param other
+ * @return true
+ * @return false
  */
 template <class T>
 bool ASVector<T>::operator<(const ASVector<T> &other)
@@ -369,9 +372,9 @@ bool ASVector<T>::operator<(const ASVector<T> &other)
 
 /**
  * @brief return the size of the vector
- * 
- * @tparam T 
- * @return int 
+ *
+ * @tparam T
+ * @return int
  */
 template <class T>
 int ASVector<T>::getSize() const
@@ -381,9 +384,9 @@ int ASVector<T>::getSize() const
 
 /**
  * @brief return the capacity of the vector
- * 
- * @tparam T 
- * @return int 
+ *
+ * @tparam T
+ * @return int
  */
 template <class T>
 int ASVector<T>::getCapacity() const
@@ -393,9 +396,9 @@ int ASVector<T>::getCapacity() const
 
 /**
  * @brief resize the vector
- * 
- * @tparam T 
- * @return int 
+ *
+ * @tparam T
+ * @return int
  */
 template <class T>
 int ASVector<T>::resize()
@@ -410,15 +413,16 @@ int ASVector<T>::resize()
     delete[] data;
     data = newdata;
     newdata = nullptr;
+    
     return capacity;
 }
 
 /**
  * @brief check if the vector is empty
- * 
- * @tparam T 
- * @return true 
- * @return false 
+ *
+ * @tparam T
+ * @return true
+ * @return false
  */
 template <class T>
 bool ASVector<T>::empty()
@@ -431,7 +435,7 @@ void ASVector<T>::print()
 {
     for (int i = 0; i < size; i++)
     {
-        cout << data[i] << endl;
+        cout << data[i] << " ";
     }
     cout << endl;
 }

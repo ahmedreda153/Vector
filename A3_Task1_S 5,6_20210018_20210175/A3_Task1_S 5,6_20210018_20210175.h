@@ -27,8 +27,8 @@ public:
     ASVector(T *arr, int n);
     ASVector(const ASVector &other);
     ~ASVector();
-    ASVector &operator=(const T &other);
-    ASVector &operator=(const T &&other);
+    ASVector &operator=(const ASVector &other);
+    ASVector &operator=(const ASVector &&other);
     T &operator[](int index);
     int push_back(T item);
     T pop_back();
@@ -45,6 +45,12 @@ public:
     int resize();
     bool empty();
     void print();
+
+    /*
+    The friend function is work when all the code is implemented in one file
+    but when we separate the code in two files the friend function is not work
+    */
+
     // friend ostream &operator<<(ostream &out, ASVector<T> other)
     // {
     //     for (int i = 0; i < other.size; i++)

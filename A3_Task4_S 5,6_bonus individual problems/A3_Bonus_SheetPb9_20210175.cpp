@@ -67,5 +67,4 @@ int main()
     obj3.Remove("what");
     // cout<<obj3.check("what");
     // cout<<obj3.Numofitems();
-    // obj3.print();
 }
