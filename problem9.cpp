@@ -33,14 +33,7 @@ public:
             }
         }
     }
-    // void print()
-    // {
-    //     for (int i = 0; i < classV.size(); i++)
-    //     {
-    //         cout << classV[i] << endl;
-    //     }
-    //     cout << "------" << endl;
-    // }
+   
     int Numofitems()
     {
         int numofitems = classV.size();
@@ -56,6 +49,10 @@ public:
         {
             return false;
         }
+    }
+
+    T* begin(){
+        return &classV[0];
     }
 };
 
